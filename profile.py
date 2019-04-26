@@ -63,13 +63,13 @@ import geni.rspec.emulab.pnext as PN
 # Globals
 #
 class GLOBALS(object):
-    OAI_DS = "urn:publicid:IDN+emulab.net:phantomnet+ltdataset+oai-develop"
+    OAI_DS = "urn:publicid:IDN+emulab.net:powdersandbox+ltdataset+oai-dev"
     OAI_SIM_DS = "urn:publicid:IDN+emulab.net:phantomnet+dataset+PhantomNet:oai"
     UE_IMG  = URN.Image(PN.PNDEFS.PNET_AM, "PhantomNet:ANDROID444-STD")
     ADB_IMG = URN.Image(PN.PNDEFS.PNET_AM, "PhantomNet:UBUNTU14-64-PNTOOLS")
     OAI_EPC_IMG = URN.Image(PN.PNDEFS.PNET_AM, "PhantomNet:UBUNTU16-64-OAIEPC")
     OAI_ENB_IMG = URN.Image(PN.PNDEFS.PNET_AM, "PhantomNet:OAI-Real-Hardware.enb1")
-    OAI_SIM_IMG = URN.Image(PN.PNDEFS.PNET_AM, "PhantomNet:UBUNTU14-64-OAI")
+    OAI_SIM_IMG = URN.Image(PN.PNDEFS.PNET_AM, "PhantomNet:UBUNTU16-64-OAI")
     OAI_CONF_SCRIPT = "/usr/bin/sudo /local/repository/bin/config_oai.pl"
     SIM_HWTYPE = "d430"
     NUC_HWTYPE = "nuc5300"
@@ -82,7 +82,7 @@ def connectOAI_DS(node, sim):
 	bs.dataset = GLOBALS.OAI_SIM_DS
     else:
 	bs.dataset = GLOBALS.OAI_DS
-    bs.rwclone = True
+    #bs.rwclone = True
 
     # Create link from node to OAI dataset rw clone
     node_if = node.addInterface("dsif_%s" % node.name)
